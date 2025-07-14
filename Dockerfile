@@ -1,4 +1,4 @@
-FROM python:3.10.5-slim-buster
+FROM python:3.10-slim-bookworm
 
 LABEL "com.github.actions.name"="Changelog CI"
 LABEL "com.github.actions.description"="Changelog CI is a GitHub Action that generates changelog, Then the changelog is committed and/or commented to the release Pull request."
@@ -24,6 +24,6 @@ RUN pip install -r requirements.txt
 
 COPY . ./app
 
-ENV PYTHONPATH "${PYTHONPATH}:/app"
+ENV PYTHONPATH="${PYTHONPATH}:/usr/src/app"
 
 CMD ["python", "-m", "scripts.main"]
