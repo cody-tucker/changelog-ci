@@ -24,6 +24,6 @@ RUN pip install -r requirements.txt
 
 COPY . ./app
 
-ENV PYTHONPATH="${PYTHONPATH}:/usr/src/app"
+ENV PYTHONPATH "${PYTHONPATH}:/app"
 
 CMD ["python", "-m", "scripts.main"]
